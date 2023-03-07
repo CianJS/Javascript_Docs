@@ -48,14 +48,14 @@ Books
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/seolranlee">
+        <a href="https://github.com/CianJS">
             <img src="https://avatars.githubusercontent.com/u/25412862?v=4" width="100;" alt="CianJS"/>
             <br />
             <sub><b>Damian</b></sub>
         </a>
     </td>
     <td align="center">
-        <a href="https://github.com/seolranlee">
+        <a href="https://github.com/blackMoja">
             <img src="https://avatars.githubusercontent.com/u/24522378?v=4" width="100;" alt="blackMoja"/>
             <br />
             <sub><b>Liam</b></sub>
