@@ -4,10 +4,6 @@
 
 숨고 JS Deep Dive Study에서 학습한 내용들을 정리해놓는 Repository입니다.<br/>
 
-### Study Members
-
-- @jjm2317 @blackMoja @CianJS @seolranlee @Soyeon1128
-
 ### Repository 이용법
 
 해당 Repo에서는 다양한 PR과 Issues들을 허용합니다. (나만 알고있는 지식으로 두지말고 공유해주세요! 🙇)<br/>
@@ -23,3 +19,47 @@
 Books
 - 모던 자바스크립트 Deep Dive (이웅모 지음)
 ```
+
+### 스터디 멤버
+
+- @jjm2317 @blackMoja @CianJS @seolranlee @Soyeon1128
+
+<table>
+  <tr>
+    <td align="center">
+        <a href="https://github.com/jjm2317">
+            <img src="https://avatars.githubusercontent.com/u/67041750?v=4" width="100;" alt="jjm2317"/>
+            <br />
+            <sub><b>Holand</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/Soyeon1128">
+            <img src="https://avatars.githubusercontent.com/u/27682003?v=4" width="100;" alt="Soyeon1128"/>
+            <br />
+            <sub><b>Zoey</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/seolranlee">
+            <img src="https://avatars.githubusercontent.com/u/23238421?v=4" width="100;" alt="seolranlee"/>
+            <br />
+            <sub><b>Ran</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/seolranlee">
+            <img src="https://avatars.githubusercontent.com/u/25412862?v=4" width="100;" alt="CianJS"/>
+            <br />
+            <sub><b>Damian</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/seolranlee">
+            <img src="https://avatars.githubusercontent.com/u/24522378?v=4" width="100;" alt="blackMoja"/>
+            <br />
+            <sub><b>Liam</b></sub>
+        </a>
+    </td>
+  </tr>
+</table>
