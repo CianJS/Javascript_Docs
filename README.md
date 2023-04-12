@@ -4,6 +4,8 @@
 
 JavaScript Deep Dive Study에서 학습한 내용들을 정리해놓은 Repository입니다.
 
+GitBook: [바로가기](https://cians-organization.gitbook.io/javascript-docs/)
+
 ## Repository 이용법
 
 해당 Repo에서는 Javascript와 관련된 다양한 PR과 Issues들을 허용합니다. (나만 알고있는 지식으로 두지말고 공유해주세요! 🙇)  
