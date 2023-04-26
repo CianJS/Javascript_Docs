@@ -13,11 +13,13 @@ GitBook: [바로가기](https://cians-organization.gitbook.io/javascript-docs/)
 
 ## 목차
 
-1. [기본](./기본.md)
+1. [기본](./%EA%B8%B0%EB%B3%B8.md)
+    - [문과 표현식](./%EB%AC%B8%EA%B3%BC%20%ED%91%9C%ED%98%84%EC%8B%9D.md)
     - [데이터타입](./%EB%8D%B0%EC%9D%B4%ED%84%B0%ED%83%80%EC%9E%85.md)
       - [타입변환](./%ED%83%80%EC%9E%85%EB%B3%80%ED%99%98.md)
-    - [연산자](./연산자.md)
-2. [변수](./변수.md)
+    - [연산자](./%EC%97%B0%EC%82%B0%EC%9E%90.md)
+2. [변수](./%EB%B3%80%EC%88%98.md)
+3. [함수](./%ED%95%A8%EC%88%98.md)
 
 ### 학습 출처
 
