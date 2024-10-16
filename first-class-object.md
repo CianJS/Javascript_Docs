@@ -62,11 +62,11 @@ function square(number) {
 console.dir(square);
 ```
 
-![](function\_property\_check.png)
+![function_property](function_property_check.png)
 
 아래는 square 함수의 모든 프로퍼티의 프로퍼티 어트리뷰트를 getOwnPropertyDescriptors 메서드로 확인한 것이다.
 
-![](function\_descriptor\_check.png)
+![function_descriptor](function_descriptor_check.png)
 
 위 이미지에서처럼 arguments, caller, length, name, prototype 프로퍼티는 모두 함수 객체의 데이터 프로퍼티이다. 또한 일반 객체에는 없는 함수 객체 고유의 프로퍼티이다.
 
@@ -131,7 +131,7 @@ function foo(func) {
 }
 
 function bar() {
-  return "caller : " + bar.caller;
+  return 'caller : ' + bar.caller;
 }
 
 console.log(foo(bar)); // caller : function foo(func) { return func(); }
@@ -202,8 +202,8 @@ prototype 프로퍼티는 생성자 함수로 호출할 수 있는 함수 객체
 
 ```js
 // 함수 객체는 prototype 프로퍼티를 소유한다.
-(function () {}).hasOwnProperty("prototype"); // true
+(function () {}).hasOwnProperty('prototype'); // true
 
 // 일반 객체는 prototype 프로퍼티를 소유하지 않는다.
-({}).hasOwnProperty("prototype"); // false
+({}).hasOwnProperty('prototype'); // false
 ```

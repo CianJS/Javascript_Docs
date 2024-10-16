@@ -4,7 +4,7 @@
 자바스크립트는 Object, String, Number, Boolean, Function, Array, Date, RegExp, Promise 등의 빌트인 생성자 함수를 제공한다.
 
 ```js
-const strObj = new String("Lee");
+const strObj = new String('Lee');
 console.log(typeof strObj); // object
 console.log(strObj); // String {"Lee"}
 
@@ -16,7 +16,7 @@ const boolObj = new Boolean(true);
 console.log(typeof boolObj); // object
 console.log(boolObj); // Boolean {true}
 
-const func = new Function("x", "return x * x");
+const func = new Function('x', 'return x * x');
 console.log(typeof func); // function
 console.dir(func); // f anonymous(x)
 ```
@@ -24,7 +24,7 @@ console.dir(func); // f anonymous(x)
 만약 위의 예제들과는 다르게 new 연산자와 함께 호출하지 않으면 생성자 함수로 동작하지 않고 일반 함수로 동작한다.
 
 ```js
-const strObj = String("Lee");
+const strObj = String('Lee');
 console.log(typeof strObj); // string
 console.log(strObj); // Lee
 ```
@@ -37,7 +37,7 @@ Object 생성자 함수는 new 연산자와 함께 호출하여 객체를 생성
 
 ```js
 const obj = new Object();
-obj.name = "Lee";
+obj.name = 'Lee';
 console.log(obj); // {name: "Lee"}
 ```
 
@@ -46,10 +46,10 @@ console.log(obj); // {name: "Lee"}
 
 ```js
 // 객체 리터럴을 사용한 방식
-const obj1 = { name: "Lee", age: 20 };
-const obj2 = { name: "Kim", age: 30 };
-const obj3 = { name: "Park", age: 40 };
-const obj4 = { name: "Choi", age: 50 };
+const obj1 = { name: 'Lee', age: 20 };
+const obj2 = { name: 'Kim', age: 30 };
+const obj3 = { name: 'Park', age: 40 };
+const obj4 = { name: 'Choi', age: 50 };
 ```
 
 반면에 위의 예제처럼 생성자 함수에 의한 객체 생성 방식은 객체(인스턴스)를 생성하기 위한 템플릿처럼 사용하여 프로퍼티 구조가 동일한 객체 여러 개를 간편하게 생성할 수 있다.
@@ -61,20 +61,20 @@ const Person = function (name, age) {
   this.age = age;
 };
 
-const obj1 = new Person("Lee", 20);
-const obj2 = new Person("Kim", 30);
-const obj3 = new Person("Park", 40);
-const obj4 = new Person("Choi", 50);
+const obj1 = new Person('Lee', 20);
+const obj2 = new Person('Kim', 30);
+const obj3 = new Person('Park', 40);
+const obj4 = new Person('Choi', 50);
 ```
 
 > this
 >
 > > this는 객체 자신의 프로퍼티나 메서드를 참조하기 위한 자기 참조 변수다. this가 가리키는 값, 즉 this 바인딩은 함수 호출 방식에 의해 동적으로 결정된다.
 
-|  함수 호출 방식 | this가 가리키는 값(this 바인딩) |
-| :-------: | :--------------------: |
-|  일반 함수 호출 |          전역 객체         |
-|   메서드 호출  | 메서드를 호출한 객체(마침표 앞의 객체) |
+|  함수 호출 방식  |    this가 가리키는 값(this 바인딩)     |
+| :--------------: | :------------------------------------: |
+|  일반 함수 호출  |               전역 객체                |
+|   메서드 호출    | 메서드를 호출한 객체(마침표 앞의 객체) |
 | 생성자 함수 호출 | 생성자 함수가 (미래에) 생성할 인스턴스 |
 
 ## 생성자 함수의 인스턴스 생성 과정
@@ -87,7 +87,7 @@ const Person = function (name) {
   this.name = name;
 };
 
-const me = new Person("Lee");
+const me = new Person('Lee');
 console.log(me); // Person {name: "Lee"}
 ```
 
@@ -109,7 +109,7 @@ const Person = function (name) {
 };
 
 // 인스턴스 생성과 this 바인딩
-const me = new Person("Lee");
+const me = new Person('Lee');
 console.log(me); // Person {name: "Lee"}
 ```
 
@@ -162,7 +162,7 @@ const Person = function (name) {
   return {};
 };
 
-const me = new Person("Lee");
+const me = new Person('Lee');
 console.log(me); // {}
 ```
 
@@ -180,7 +180,7 @@ const Person = function (name) {
   return 100;
 };
 
-const me = new Person("Lee");
+const me = new Person('Lee');
 console.log(me); // Person {name: "Lee"}
 ```
 
@@ -199,8 +199,8 @@ console.log(me); // Person {name: "Lee"}
 
 자바스크립트 엔진은 함수 정의를 평가하여 함수 객체를 생성할 때 함수 정의 방식에 따라 함수를 constructor와 non-constructor로 구분한다.
 
-* constructor: 함수 선언문, 함수 표현식, 클래스
-* non-constructor: 메서드(ES6 메서드 축약 표현), 화살표 함수
+- constructor: 함수 선언문, 함수 표현식, 클래스
+- non-constructor: 메서드(ES6 메서드 축약 표현), 화살표 함수
 
 여기서 중요한 점은 ECMAScript 사양에서 메서드란 ES6의 메서드 축약 표현만을 의미한다. 즉, 함수가 어디에 할당되어 있는지에 따라 메서드인지를 구분하는 것이 아니라 함수 정의 방식에 따라 constructor와 non-constructor를 구분한다.
 
@@ -246,7 +246,7 @@ function Person(name) {
   return { name };
 }
 
-const me = new Person("Lee");
+const me = new Person('Lee');
 // 함수가 생성한 객체를 반환한다.
 console.log(me); // Person {name: "Lee"}
 ```
@@ -319,10 +319,10 @@ console.log(obj); // {}
 obj = Object();
 console.log(obj); // {}
 
-let f = new Function("x", "return x ** x");
+let f = new Function('x', 'return x ** x');
 console.log(f); // ƒ anonymous(x) { return x ** x }
 
-f = Function("x", "return x ** x");
+f = Function('x', 'return x ** x');
 console.log(f); // ƒ anonymous(x) { return x ** x }
 ```
 
@@ -332,9 +332,9 @@ console.log(f); // ƒ anonymous(x) { return x ** x }
 const str = String(123);
 console.log(str, typeof str); // 123 string
 
-const num = Number("123");
+const num = Number('123');
 console.log(num, typeof num); // 123 number
 
-const bool = Boolean("true");
+const bool = Boolean('true');
 console.log(bool, typeof bool); // true boolean
 ```

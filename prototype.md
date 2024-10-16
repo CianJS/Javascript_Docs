@@ -74,17 +74,17 @@ console.log(circle1.getArea === circle2.getArea); // true
 \[\[Prototype]] 내부 슬롯의 값은 객체 생성 방식에 의해 결정된다. (null인 값도 있는데 이 경우 프로토타입이 없다.)\
 또한 모든 객체는 하나의 프로토타입을 갖고 모든 프로토타입은 생성자 함수와 연결되어있다.
 
-![프로토타입과 생성자함수](prototype\_new\_function.png)
+![프로토타입과 생성자함수](prototype_new_function.png)
 
 ### \_\_proto\_\_ 접근자 프로퍼티
 
 모든 객체는 \_\_proto\_\_ 접근자 프로퍼티를 통해 자신의 프로토타입, 즉 \[\[Prototype]] 내부 슬롯에 간접적으로 접근할 수 있다.
 
 ```js
-const person = { name: "Lee" };
+const person = { name: 'Lee' };
 ```
 
-![](<\_\_proto\_\_ 접근자 프로퍼티.png>)
+![접근자 프로퍼티](<__proto__ 접근자 프로퍼티.png>)
 
 위 스크린샷은 \_\_proto\_\_ 접근자 프로퍼티를 통해 person 객체의 \[\[Prototype]] 내부 슬롯이 가리키는 객체인 Object.prototype에 접근한 모습이다.
 
@@ -112,13 +112,13 @@ obj.x; // 1
 \_\_proto\_\_ 접근자 프로퍼티는 객체가 직접 소유하는 프로퍼티가 아니라 Object.prototype의 프로퍼티다.
 
 ```js
-const person = { name: "Lee" };
+const person = { name: 'Lee' };
 
 // person 객체는 __proto__ 프로퍼티를 소유하지 않는다.
-console.log(person.hasOwnProperty("__proto__")); // false
+console.log(person.hasOwnProperty('__proto__')); // false
 
 // __proto__ 프로퍼티는 모든 객체의 프로토타입 객체인 Object.prototype의 접근자 프로퍼티다.
-console.log(Object.getOwnPropertyDescriptor(Object.prototype, "__proto__"));
+console.log(Object.getOwnPropertyDescriptor(Object.prototype, '__proto__'));
 // {get: ƒ, set: ƒ, enumerable: false, configurable: true}
 
 // 모든 객체는 Object.prototype의 접근자 프로퍼티 __proto__를 상속받아 사용할 수 있다.
@@ -177,13 +177,13 @@ console.log(obj.x); // 1
 모든 함수 객체는 prototype 프로퍼티를 소유한다.
 
 ```js
-(function () {}).hasOwnProperty("prototype"); // true
+(function () {}).hasOwnProperty('prototype'); // true
 ```
 
 반면에 일반 객체는 prototype 프로퍼티를 소유하지 않는다.
 
 ```js
-({}).hasOwnProperty("prototype"); // false
+({}).hasOwnProperty('prototype'); // false
 ```
 
 prototype 프로퍼티는 생성자 함수가 생성할 인스턴스의 프로토타입을 가리킨다. 그렇기에 [non-constructor](new-function.md)인 화살표 함수와 ES6 메서드 축약 표현으로 정의한 메서드는 prototype 프로퍼티를 소유하지 않는다.
@@ -202,9 +202,9 @@ const obj = {
 
 모든 객체가 가지고 있는 다시 말해서 `Object.prototype` 으로부터 상속받은 `\_\_proto\_\_` 접근자 프로퍼티와 함수 객체만 가지고있는 prototype 프로퍼티는 모두 동일한 프로토타입을 가리킨다. 하지만 프로퍼티를 사용하는 주체가 다르다.
 
-| 구분            | 소유          | 값                        | 사용 주체  | 사용 목적                               |
-| ------------- | ----------- | ------------------------ | ------ | ----------------------------------- |
-| \_\_proto\_\_ | 모든 객체       | Object.prototype 로부터의 상속 | 모든 객체  | 객체가 자신의 프로토타입에 접근 또는 교체하기 위해 사용     |
+| 구분          | 소유        | 값                             | 사용 주체   | 사용 목적                                                       |
+| ------------- | ----------- | ------------------------------ | ----------- | --------------------------------------------------------------- |
+| \_\_proto\_\_ | 모든 객체   | Object.prototype 로부터의 상속 | 모든 객체   | 객체가 자신의 프로토타입에 접근 또는 교체하기 위해 사용         |
 | prototype     | constructor | Object.prototype 로부터의 상속 | 생성자 함수 | 생성자 함수가 생성할 인스턴스의 프로토타입을 할당하기 위해 사용 |
 
 예제를 통해 확인해보자
@@ -215,7 +215,7 @@ function Person(name) {
   this.name = name;
 }
 
-const me = new Person("Lee");
+const me = new Person('Lee');
 
 // Person.prototype과 me.__proto__는 동일한 프로토타입을 가리킨다.
 console.log(Person.prototype === me.__proto__); // true
@@ -231,7 +231,7 @@ function Person(name) {
   this.name = name;
 }
 
-const me = new Person("Lee");
+const me = new Person('Lee');
 
 // me 객체의 생성자 함수는 Person이다.
 console.log(me.constructor === Person); // true
@@ -254,7 +254,7 @@ console.log(obj.constructor === Object); // true
 이러한 점에서 객체 리터럴을 통해 생성된 객체도 Object 생성자 함수가 생성한 객체와 같다고 착각할 수 있다.\
 ECMAScript 사양에서는 Object 생성자 함수는 다음과 같이 정의되어있다.
 
-![](ecmascript-object.png)
+![ec-object](ecmascript-object.png)
 
 참고: [https://tc39.es/ecma262/#sec-fundamental-objects](https://tc39.es/ecma262/#sec-fundamental-objects)
 
@@ -277,13 +277,13 @@ new Foo();
 obj = new Object(123);
 console.log(obj); // Number {123}
 
-obj = new Object("123");
+obj = new Object('123');
 console.log(obj); // String {"123"}
 ```
 
 객체 리터럴이 평가될 때는 아래의 이미지와같이 추상 연산 OrdinaryObjectCreate를 호출하여 빈 객체를 생성하고 프로퍼티를 추가하도록 정의되어있다.
 
-![](object-literal-evaluation.png)
+![ob-li-eval](object-literal-evaluation.png)
 
 Object 생성자 함수 호출과 객체 리터럴의 평가는 추상 연산 OrdinaryObjectCreate를 호출하여 빈 객체를 생성하는 점은 동일하지만 new.target의 확인이나 프로퍼티를 추가하는 처리 등 세부 내용은 다르다.\
 즉, 객체 리터럴에 의해 생성된 객체는 Object 생성자 함수가 생성한 객체가 아니다.
@@ -347,11 +347,11 @@ Object, String, Number, Boolean, Promise, Function, Array, Date, RegExp 등의 �
 
 객체는 다음과 같은 방식으로 생성할 수 있다.
 
-* 객체 리터럴
-* Object 생성자 함수
-* 생성자 함수
-* Object.create 메서드
-* 클래스(ES6)
+- 객체 리터럴
+- Object 생성자 함수
+- 생성자 함수
+- Object.create 메서드
+- 클래스(ES6)
 
 각 생성 방식마다 차이는 있으나 추상 연산 `OrdinaryObjectCreate` 에 의해 생성된다는 점은 동일하다.
 
@@ -403,7 +403,7 @@ function Person(name) {
   this.name = name;
 }
 
-const me = new Person("Lee");
+const me = new Person('Lee');
 
 // Person 생성자 함수에 의해 생성된 me 객체의 프로토타입은 Person.prototype이다.
 console.log(Object.getPrototypeOf(me) === Person.prototype); // true
@@ -411,7 +411,7 @@ console.log(Object.getPrototypeOf(me) === Person.prototype); // true
 
 표준 빌트인 객체인 Object 생성자 함수와 같이 생성된 프로토타입 `Object.prototype` 은 다양한 메서드(hasOwnProperty, toString, valueOf 등)를 제공한다. 반면에 사용자 정의 사용자 함수의 프로토타입의 프로퍼티는 `constructor` 프로퍼티 하나뿐이다.
 
-![](creation-prototype-by-creator-function.png)
+![creation-prototype-by-creator-function](creation-prototype-by-creator-function.png)
 
 ## 프로토타입 체인
 
@@ -424,10 +424,10 @@ Person.prototype.sayHello = function () {
   console.log(`Hi! My name is ${this.name}`);
 };
 
-const me = new Person("Lee");
+const me = new Person('Lee');
 
 // hasOwnProperty 메서드는 Object.prototype의 메서드다.
-console.log(me.hasOwnProperty("name")); // true
+console.log(me.hasOwnProperty('name')); // true
 ```
 
 me 객체의 프로토타입은 `Person.prototype` 이다.
@@ -460,7 +460,7 @@ console.log(me.foo); // undefined
 > > 스코프 체인은 식별자 검색을 위한 매커니즘이고 프로토타입 체인은 상속과 프로퍼티 검색을 위한 메커니즘이다.
 > >
 > > ```js
-> > me.hasOwnProperty("name");
+> > me.hasOwnProperty('name');
 > > ```
 > >
 > > 위 예제에서는 먼저 스코프 체인에서 me 식별자를 검색한다. me 식별자는 전역에서 선언되었으므로 전역 스코프에서 검색된다. 그 후 me 객체의 프로토타입 체인에서 hasOwnProperty 메서드를 검색한다. 이처럼 스코프 체인과 프로토타입 체인은 서로 연관없이 별도로 동작하는 것이 아니라 서로 협력하여 식별자와 프로퍼티를 검색한다.
@@ -478,7 +478,7 @@ Person.prototype.sayHello = function () {
   console.log(`Hi! My name is ${this.name}`);
 };
 
-const me = new Person("Lee");
+const me = new Person('Lee');
 
 me.sayHello = function () {
   console.log(`Hey! My name is ${this.name}, Nice to meet you!`);
@@ -539,7 +539,7 @@ const Person = (function () {
   return Person;
 })();
 
-const me = new Person("Lee");
+const me = new Person('Lee');
 me.sayHello(); // Hi! My name is Lee
 
 console.log(me.constructor === Person); // false
@@ -565,7 +565,7 @@ const Person = (function () {
   return Person;
 })();
 
-const me = new Person("Lee");
+const me = new Person('Lee');
 me.sayHello(); // Hi! My name is Lee
 
 console.log(me.constructor === Person); // true
@@ -582,7 +582,7 @@ function Person(name) {
   this.name = name;
 }
 
-const me = new Person("Lee");
+const me = new Person('Lee');
 
 // me 객체는 Person 생성자 함수와 연결된 인스턴스이다.
 console.log(me instanceof Person); // true
@@ -609,7 +609,7 @@ const Person = (function () {
   return Person;
 })();
 
-const me = new Person("Lee");
+const me = new Person('Lee');
 
 // constructor 프로퍼티와 생성자 함수 간의 연결이 파괴되었다.
 console.log(me.constructor === Person); // false
@@ -622,8 +622,8 @@ console.log(me instanceof Person); // true
 
 두 가지 방법으로 직접 상속을 구현할 수 있다.
 
-* Object.create 메서드를 사용하는 방법
-* 객체 리터럴 내부에서 **proto** 접근자 프로퍼티를 사용하는 방법
+- Object.create 메서드를 사용하는 방법
+- 객체 리터럴 내부에서 **proto** 접근자 프로퍼티를 사용하는 방법
 
 ### Object.create 메서드를 사용하는 방법
 
@@ -632,7 +632,7 @@ function Person(name) {
   this.name = name;
 }
 const me = Object.create(Person.prototype);
-me.name = "Lee";
+me.name = 'Lee';
 
 console.log(me.__proto__ === Person.prototype); // true
 ```
@@ -649,7 +649,7 @@ const Person = {
 };
 
 const me = {
-  name: "Lee",
+  name: 'Lee',
   __proto__: Person,
 };
 
@@ -674,14 +674,14 @@ function Person(name) {
 }
 
 // 정적 프로퍼티
-Person.staticProp = "static prop";
+Person.staticProp = 'static prop';
 
 // 정적 메서드
 Person.staticMethod = function () {
-  console.log("staticMethod");
+  console.log('staticMethod');
 };
 
-const me = new Person("Lee");
+const me = new Person('Lee');
 
 // 정적 프로퍼티/메서드는 생성자 함수로 참조/호출한다.
 Person.staticMethod(); // staticMethod
@@ -695,8 +695,8 @@ me.staticMethod(); // TypeError: me.staticMethod is not a function
 
 객체는 프로퍼티를 가지고 있는지 확인하는 다음과 같은 방법을 제공한다.
 
-* [in 연산자](prototype.md#in-연산자)
-* [Object.prototype.hasOwnProperty 메서드](prototype.md#objectprototypehasownproperty-메서드)
+- [in 연산자](prototype.md#in-연산자)
+- [Object.prototype.hasOwnProperty 메서드](prototype.md#objectprototypehasownproperty-메서드)
 
 ### in 연산자
 
@@ -714,19 +714,19 @@ key in obj;
 
 ```js
 const person = {
-  name: "Lee",
-  address: "Seoul",
+  name: 'Lee',
+  address: 'Seoul',
 };
 
-console.log("name" in person); // true
-console.log("address" in person); // true
-console.log("age" in person); // false
+console.log('name' in person); // true
+console.log('address' in person); // true
+console.log('age' in person); // false
 ```
 
 in 연산자는 확인하려는 대상 객체 뿐만 아니라 객체가 상속받은 모든 프로토타입의 프로퍼티를 확인한다. 따라서 해당 객체가 상속받은 모든 프로토타입의 프로퍼티까지 확인한다. 위의 예에서 person 객체는 hasOwnProperty 메서드를 갖고있지 않지만 Object.prototype을 상속받았으므로 아래 코드의 결과는 true이다.
 
 ```js
-console.log("hasOwnProperty" in person); // true
+console.log('hasOwnProperty' in person); // true
 ```
 
 이러한 점은 in 연산자가 프로토타입 체인 상에 존재하는 모든 프로토타입의 프로퍼티를 확인한다는 것을 알 수 있다.
@@ -734,9 +734,9 @@ console.log("hasOwnProperty" in person); // true
 ### Object.prototype.hasOwnProperty 메서드
 
 ```js
-person.hasOwnProperty("name"); // true
-person.hasOwnProperty("age"); // false
-person.hasOwnProperty("toString"); // false
+person.hasOwnProperty('name'); // true
+person.hasOwnProperty('age'); // false
+person.hasOwnProperty('toString'); // false
 ```
 
 hasOwnProperty 메서드는 인수로 전달받은 프로퍼티 키가 객체 고유의 프로퍼티 키인 경우에만 true를 반환한다.
@@ -751,13 +751,13 @@ for ... in 문은 객체의 프로토타입 체인 상에 존재하는 모든 �
 
 ```js
 const person = {
-  name: "Lee",
-  address: "Seoul",
+  name: 'Lee',
+  address: 'Seoul',
   __proto__: { age: 20 },
 };
 
 for (const key in person) {
-  console.log(key + ": " + person[key]);
+  console.log(key + ': ' + person[key]);
 }
 // name: Lee
 // address: Seoul
@@ -767,7 +767,7 @@ for (const key in person) {
 위의 person 객체는 프로토타입 체인 상에 toString 같은 메서드에 접근할 수 있지만 열거되지 않는다. toString 메서드는 프로퍼티 어트리뷰트 \[\[Enumerable]]의 값이 false이기 때문이다.
 
 ```js
-console.log(Object.getOwnPropertyDescriptor(Object.prototype, "toString"));
+console.log(Object.getOwnPropertyDescriptor(Object.prototype, 'toString'));
 // {value: ƒ, writable: true, enumerable: false, configurable: true}
 ```
 
@@ -777,8 +777,8 @@ Object.keys/values/entries 메서드는 객체 자신의 열거 가능한 프로
 
 ```js
 const person = {
-  name: "Lee",
-  address: "Seoul",
+  name: 'Lee',
+  address: 'Seoul',
   __proto__: { age: 20 },
 };
 

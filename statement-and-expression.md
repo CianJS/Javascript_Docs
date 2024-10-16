@@ -16,9 +16,9 @@ layout:
 
 ## 리터럴
 
-* 숫자, 문자, 미리 약속된 기호('', \[], {} 등)로 표기한 코드
-* JS 엔진은 런타임에 리터럴을 평가해 값을 생성한다.
-* 값을 생성하기 위해 미리 약속한 표기법
+- 숫자, 문자, 미리 약속된 기호('', \[], {} 등)로 표기한 코드
+- JS 엔진은 런타임에 리터럴을 평가해 값을 생성한다.
+- 값을 생성하기 위해 미리 약속한 표기법
 
 ## 표현식(expression)
 
@@ -28,7 +28,7 @@ layout:
 ```js
 // 리터럴 표현식
 8;
-("soomgo");
+('soomgo');
 
 // 식별자 표현식
 profile;
@@ -45,7 +45,7 @@ profile.dispatchUnreadChatMessageCount();
 
 ## 문(Statement)
 
-* 선언문, 할당문, 조건문, 반복문 등으로 구분할 수 있다.
+- 선언문, 할당문, 조건문, 반복문 등으로 구분할 수 있다.
 
 ```js
 // 변수 선언문
@@ -67,11 +67,11 @@ if (soomgo > 10) {
 
 표현식인 문
 
-* 값으로 평가될 수 있는 문
+- 값으로 평가될 수 있는 문
 
 표현식이 아닌 문
 
-* 값으로 평가될 수 없는 문
+- 값으로 평가될 수 없는 문
 
 ```js
 // 변수 선언문은 표현식이 아닌문이다.
@@ -130,23 +130,23 @@ switch문은 조건식의 평가 결과와 일치하는 case문으로 실행 흐
 var x = 2;
 switch (x) {
   case 1:
-    console.log("1");
+    console.log('1');
     break;
   case 2:
-    console.log("2");
+    console.log('2');
     break;
   case 3:
-    console.log("3");
+    console.log('3');
     break;
   default:
-    console.log("default");
+    console.log('default');
 }
 // 2
 ```
 
 **폴스루(fall through)**
 
-* switch문은 조건식의 평가 결과와 일치하는 case문을 찾으면 이후의 모든 case문을 건너뛴다.\
+- switch문은 조건식의 평가 결과와 일치하는 case문을 찾으면 이후의 모든 case문을 건너뛴다.\
   이때 break문을 생략하면 다음 case문으로 실행 흐름이 이어진다. 이를 폴스루라 한다.
 
 ```js
@@ -182,9 +182,9 @@ for (초기화식; 조건식; 증감식) {
 }
 ```
 
-* 초기화식: 변수 선언문 또는 할당문으로 이루어진 표현식이다.
-* 조건식: 조건식은 불리언 값으로 평가되어야 한다. 조건식의 평가 결과가 참인 경우 코드 블록을 실행한다. (불리언 값이 아닌 값으로 평가되면 불리언 값으로 암묵적 타입 변환된다.)
-* 증감식: 증감식은 [증가 또는 감소 연산자](operator.md#단항-산술-연산자)를 사용한 표현식이다. 증감식은 변수의 값을 증가 또는 감소시킨다.
+- 초기화식: 변수 선언문 또는 할당문으로 이루어진 표현식이다.
+- 조건식: 조건식은 불리언 값으로 평가되어야 한다. 조건식의 평가 결과가 참인 경우 코드 블록을 실행한다. (불리언 값이 아닌 값으로 평가되면 불리언 값으로 암묵적 타입 변환된다.)
+- 증감식: 증감식은 [증가 또는 감소 연산자](operator.md#단항-산술-연산자)를 사용한 표현식이다. 증감식은 변수의 값을 증가 또는 감소시킨다.
 
 ```js
 // for문 예제
@@ -255,7 +255,7 @@ while문은 조건식의 평가 결과가 항상 참이면 무한루프가 된�
 ```js
 // 무한루프
 while (true) {
-  console.log("무한루프");
+  console.log('무한루프');
 }
 ```
 
@@ -344,11 +344,11 @@ var x = 0;
 var z = 0;
 
 labelCancelLoops: while (true) {
-  console.log("Outer loops: " + x);
+  console.log('Outer loops: ' + x);
   x += 1;
   z = 1;
   while (true) {
-    console.log("Inner loops: " + z);
+    console.log('Inner loops: ' + z);
     z += 1;
     if (z === 10 && x === 10) {
       break labelCancelLoops;
