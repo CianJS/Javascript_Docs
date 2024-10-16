@@ -13,16 +13,16 @@ GitBook: [바로가기](https://cians-organization.gitbook.io/javascript-docs/)
 
 ## 목차
 
-1. [기본](basement.md)
-   * [문과 표현식](statement-and-expression.md)
-   * [데이터타입](data-type.md)
-     * [타입변환](type-conversion.md)
+1. [기본](undefined.md)
+   * [문과 표현식](undefined-2.md)
+   * [데이터타입](undefined-1.md)
+     * [타입변환](undefined-8.md)
      * [생성자 함수](%EC%83%9D%EC%84%B1%EC%9E%90%20%ED%95%A8%EC%88%98md/)
-   * [연산자](operator.md)
-   * [일급객체](first-object.md)
-2. [변수](variable.md)
-3. [함수](undefined.md)
-4. [스코프](scope.md)
+   * [연산자](undefined-6.md)
+   * [일급객체](undefined-7.md)
+2. [변수](undefined-3.md)
+3. [함수](function.md)
+4. [스코프](undefined-5.md)
 
 ### 학습 출처
 

@@ -12,7 +12,7 @@
 ## 상속과 프로토타입
 
 자바스크립트는 프로토타입을 기반으로 상속을 구현해 불필요한 중복을 제거한다.\
-중복을 제거하는 방법은 재사용인데, 프로토타입 이전에 [생성자 함수](new-function.md)의 예제를 먼저 살펴보자
+중복을 제거하는 방법은 재사용인데, 프로토타입 이전에 [생성자 함수](undefined-4.md)의 예제를 먼저 살펴보자
 
 ```js
 // 생성자 함수
@@ -90,7 +90,7 @@ const person = { name: "Lee" };
 
 #### \_\_proto\_\_는 접근자 프로퍼티다
 
-가장 먼저 알아야할 것은 [내부 슬롯](property-attribute.md)은 프로퍼티가 아니다. 즉, 자바스크립트는 원칙적으로 내부 슬롯과 내부 메서드에 직접적으로 접근하거나 호출할 수 있는 방법을 제공하지 않는다. 하지만 일부 내부 슬롯과 내부 메서드에 한해 간접적으로 접근할 수 있는 수단을 제공하기는 한다.\
+가장 먼저 알아야할 것은 [내부 슬롯](undefined-10.md)은 프로퍼티가 아니다. 즉, 자바스크립트는 원칙적으로 내부 슬롯과 내부 메서드에 직접적으로 접근하거나 호출할 수 있는 방법을 제공하지 않는다. 하지만 일부 내부 슬롯과 내부 메서드에 한해 간접적으로 접근할 수 있는 수단을 제공하기는 한다.\
 \[\[Prototype]] 내부 슬롯에 간접적으로 접근할 수 있는 방법은 \_\_proto\_\_ 접근자 프로퍼티를 통해 가능하다.
 
 Object.prototype의 접근자 프로퍼티인 \_\_proto\_\_는 getter, setter 함수라고 불리는 접근자 함수(\[\[Get]], \[\[Set]] 프로퍼티 어트리뷰트에 할당된 함수)를 통해 \[\[Prototype]] 내부 슬롯의 값. 즉, 프로토타입을 취득하거나 할당한다.
@@ -186,7 +186,7 @@ console.log(obj.x); // 1
 ({}).hasOwnProperty("prototype"); // false
 ```
 
-prototype 프로퍼티는 생성자 함수가 생성할 인스턴스의 프로토타입을 가리킨다. 그렇기에 [non-constructor](new-function.md)인 화살표 함수와 ES6 메서드 축약 표현으로 정의한 메서드는 prototype 프로퍼티를 소유하지 않는다.
+prototype 프로퍼티는 생성자 함수가 생성할 인스턴스의 프로토타입을 가리킨다. 그렇기에 [non-constructor](undefined-4.md)인 화살표 함수와 ES6 메서드 축약 표현으로 정의한 메서드는 prototype 프로퍼티를 소유하지 않는다.
 
 ```js
 // 화살표 함수
@@ -695,8 +695,8 @@ me.staticMethod(); // TypeError: me.staticMethod is not a function
 
 객체는 프로퍼티를 가지고 있는지 확인하는 다음과 같은 방법을 제공한다.
 
-* [in 연산자](prototype.md#in-연산자)
-* [Object.prototype.hasOwnProperty 메서드](prototype.md#objectprototypehasownproperty-메서드)
+* [in 연산자](undefined-9.md#in-연산자)
+* [Object.prototype.hasOwnProperty 메서드](undefined-9.md#objectprototypehasownproperty-메서드)
 
 ### in 연산자
 
