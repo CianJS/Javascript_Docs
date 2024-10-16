@@ -84,7 +84,7 @@ console.log(circle1.getArea === circle2.getArea); // true
 const person = { name: 'Lee' };
 ```
 
-![접근자 프로퍼티](<__proto__ 접근자 프로퍼티.png>)
+![__proto__ 접근자 프로퍼티](__proto__accessor_property.png)
 
 위 스크린샷은 \_\_proto\_\_ 접근자 프로퍼티를 통해 person 객체의 \[\[Prototype]] 내부 슬롯이 가리키는 객체인 Object.prototype에 접근한 모습이다.
 
@@ -254,7 +254,7 @@ console.log(obj.constructor === Object); // true
 이러한 점에서 객체 리터럴을 통해 생성된 객체도 Object 생성자 함수가 생성한 객체와 같다고 착각할 수 있다.\
 ECMAScript 사양에서는 Object 생성자 함수는 다음과 같이 정의되어있다.
 
-![ec-object](ecmascript-object.png)
+![](ecmascript-object.png)
 
 참고: [https://tc39.es/ecma262/#sec-fundamental-objects](https://tc39.es/ecma262/#sec-fundamental-objects)
 
@@ -283,7 +283,7 @@ console.log(obj); // String {"123"}
 
 객체 리터럴이 평가될 때는 아래의 이미지와같이 추상 연산 OrdinaryObjectCreate를 호출하여 빈 객체를 생성하고 프로퍼티를 추가하도록 정의되어있다.
 
-![ob-li-eval](object-literal-evaluation.png)
+![](object-literal-evaluation.png)
 
 Object 생성자 함수 호출과 객체 리터럴의 평가는 추상 연산 OrdinaryObjectCreate를 호출하여 빈 객체를 생성하는 점은 동일하지만 new.target의 확인이나 프로퍼티를 추가하는 처리 등 세부 내용은 다르다.\
 즉, 객체 리터럴에 의해 생성된 객체는 Object 생성자 함수가 생성한 객체가 아니다.
@@ -411,7 +411,7 @@ console.log(Object.getPrototypeOf(me) === Person.prototype); // true
 
 표준 빌트인 객체인 Object 생성자 함수와 같이 생성된 프로토타입 `Object.prototype` 은 다양한 메서드(hasOwnProperty, toString, valueOf 등)를 제공한다. 반면에 사용자 정의 사용자 함수의 프로토타입의 프로퍼티는 `constructor` 프로퍼티 하나뿐이다.
 
-![creation-prototype-by-creator-function](creation-prototype-by-creator-function.png)
+![](creation-prototype-by-creator-function.png)
 
 ## 프로토타입 체인
 
